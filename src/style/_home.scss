@@ -1,0 +1,23 @@
+$bg-color: #fff;
+$text-color: #000;
+
+@mixin flexbox($x:center, $y: center, $dir: row) {
+	display: flex;
+	flex-direction: $dir;
+	justify-content: $x;
+	align-items: $y;
+}
+
+.container {
+	min-height: 100vh;
+	min-width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 5vh 85vh 10vh;
+	background-color: $bg-color;
+	color: $text-color;
+	padding: 10px;
+}
+.container--header {
+	@include flexbox(space-between, center, row)
+}
